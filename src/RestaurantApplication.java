@@ -1,6 +1,6 @@
 import concretesubscribers.CustomerListener;
 import concretesubscribers.KitchenListener;
-import subject.Order;
+import concretesubject.Order;
 
 public class RestaurantApplication {
     public static void main(String[] args) {
@@ -8,10 +8,9 @@ public class RestaurantApplication {
 
         KitchenListener kitchen = new KitchenListener();
         CustomerListener customer1 = new CustomerListener("Amina");
-        CustomerListener customer2 = new CustomerListener("Almas");
+        order.events.attach("placed", customer1);
 
         order.events.attach("placed", kitchen);
-        order.events.attach("placed", customer1);
         order.events.attach("cooking", customer1);
         order.events.attach("ready", kitchen);
         order.events.attach("ready", customer1);

@@ -1,4 +1,4 @@
-package subject;
+package concretesubject;
 
 import publisher.OrderEventManager;
 
